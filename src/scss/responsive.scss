@@ -1,0 +1,45 @@
+@media (max-width: $max-media-sd) {
+  @import "./responsive-desktop";
+}
+@media (max-width: $max-media-md) {
+  @import "./responsive-tablet-landscape";
+}
+@media (max-width: $max-media-sm) {
+  @import "./responsive-tablet-portrait";
+}
+@media (max-width: $max-media-xs) {
+  @import "./responsive-mobile-landscape";
+}
+@media (max-width: $max-media-xss) {
+  @import "./responsive-mobile-portrait";
+}
+@media (max-width: $max-media-xxss) {
+  @import "./responsive-mobile-small";
+}
+
+@media (min-width: $min-media-sd) {
+}
+
+@media (min-width: $min-media-md) {
+}
+
+@media (max-width: $max-media-md) and (min-width: $min-media-sm) {
+}
+
+@media (min-width: $min-media-sm) {
+  .main-content .chart-data .row .col-12 .b-chart {
+    padding: 80px !important;
+    .title {
+      margin-left: -60px;
+    }
+  }
+}
+
+@media (min-width: $min-media-xs) {
+}
+
+@media (min-width: $min-media-xss) {
+}
+
+@media (min-width: $min-media-xxss) {
+}

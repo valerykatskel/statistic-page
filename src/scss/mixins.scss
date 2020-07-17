@@ -1,0 +1,259 @@
+@mixin cfix() {
+  content: " ";
+  display: block;
+  clear: both;
+}
+@mixin animation-iteration-count($count) {
+  animation-iteration-count: $count;
+}
+@mixin animation-duration($duration) {
+  animation-duration: $duration;
+}
+@mixin animation-timing-function($timing) {
+  animation-timing-function: $timing;
+}
+@mixin animation-name($name) {
+  animation-name: $name;
+}
+@mixin animation-fill-mode($name) {
+  animation-fill-mode: $name;
+}
+@mixin animation-delay($name) {
+  animation-delay: $name;
+}
+@mixin transition($transition) {
+  transition: $transition;
+}
+@mixin transform($transform) {
+  transform: $transform;
+}
+@mixin filter($filter) {
+  filter: filter;
+}
+@mixin appearance($appearance) {
+  appearance: $appearance;
+}
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+@mixin box-sizing($sizing) {
+  box-sizing: $sizing;
+}
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin border-radius-top-right($radius) {
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -ms-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+@mixin border-radius-top-left($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -ms-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+@mixin border-radius-bottom-right($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -ms-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+@mixin border-radius-bottom-left($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -ms-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+@mixin font($size, $line, $color, $weight, $lSpace) {
+  font-size: $size;
+  line-height: $line;
+  color: $color;
+  font-weight: $weight;
+  letter-spacing: $lSpace;
+}
+@mixin linear-gradientH($color1, $color2) {
+  background: $color1;
+  background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+  background: linear-gradient(to right, $color1 0%, $color2 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=1 );
+}
+@mixin linear-gradientV($color1, $color2) {
+  background: $color1;
+  background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+  background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=0 );
+}
+@mixin linear-gradientR($color1, $color2) {
+  background: $color1;
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    $color1 0%,
+    $color2 100%
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    $color1 0%,
+    $color2 100%
+  );
+  background: radial-gradient(ellipse at center, $color1 0%, $color2 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=1 );
+}
+@mixin linear-gradientD45($color1, $color2) {
+  background: $color1;
+  background: -moz-linear-gradient(45deg, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(45deg, $color1 0%, $color2 100%);
+  background: linear-gradient(45deg, $color1 0%, $color2 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=1 );
+}
+@mixin linear-gradientD-45($color1, $color2) {
+  background: $color1;
+  background: -moz-linear-gradient(-45deg, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(-45deg, $color1 0%, $color2 100%);
+  background: linear-gradient(-45deg, $color1 0%, $color2 100%);
+  // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2,GradientType=1 );
+}
+@mixin back-img($size, $position, $repeat) {
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+}
+
+@mixin colorList($color) {
+  color: $color;
+  &:before {
+    background-color: $color;
+  }
+}
+@mixin inputStyles() {
+  display: block;
+  height: $inputSize;
+  width: 100%;
+  padding: 0px 10px;
+  border: solid 1px $inputBorder;
+  background: none;
+  outline: none !important;
+  font-family: $font2;
+  @include border-radius(4px);
+  @include box-shadow(none);
+  @include font(16px, 24px, $color2, normal, 0);
+  @include transition(all 0.3s);
+  &:hover {
+    border-color: $inputBorderH;
+  }
+  &:focus {
+    border-color: $inputBorderF;
+  }
+  &[disabled] {
+    opacity: 0.5;
+  }
+  &.error {
+    border-color: $inputBorderError;
+  }
+}
+
+@mixin tableInfoFillRedBtn {
+  [class*="btn"]:not([class*="Text"]) {
+    @include fullBtn();
+    @include fillRedBtn();
+  }
+}
+@mixin tableInfoFillFullRedBtn {
+  [class*="btn"].small:not([class*="Text"]) {
+    @include fillBtn();
+    @include smallBtn();
+    @include fullBtn();
+    @include fillRedBtn();
+  }
+}
+@mixin tableInfoBaseFillFullRedBtn {
+  [class*="btn"].medium:not([class*="Text"]) {
+    @include fillBtn();
+    @include mediumBtn();
+    @include fullBtn();
+    @include fillRedBtn();
+  }
+}
+@mixin tableInfoBaseSixFillFullRedBtn {
+  [class*="btn"].small:not([class*="Text"]) {
+    @include fillBtn();
+    @include smallBtn();
+    @include fullBtn();
+    @include fillRedBtn();
+  }
+}
+@mixin tarifBaseHoverActive {
+  overflow: hidden;
+  margin-top: -10px;
+  @include border-radius(4px);
+  margin-bottom: -11px;
+  .head {
+    padding-top: 10px;
+    // padding-top: 15px;
+    height: 161px;
+
+    [class*="star"] {
+      color: $color3-a5;
+      top: 4px;
+      opacity: 1;
+    }
+    [class*="Cap"] {
+    }
+  }
+  .footTarif {
+    .test {
+      display: block;
+    }
+  }
+}
+@mixin tarifTemplateHoverActive {
+  background-color: $color1;
+
+  $shadow: 0 11px 24px 0 $color2-a12, 0 0 14px 0 $color2-a12;
+  @include box-shadow($shadow);
+
+  .head {
+    background-color: $color1;
+    [class*="Cap"] {
+      color: $color4;
+      border-bottom-color: $color3-a12;
+    }
+    .costBlock {
+      .val,
+      .kop,
+      .cur,
+      .mon {
+        color: $color4;
+        &.cur {
+          border-bottom-color: $color3-a12;
+        }
+      }
+    }
+  }
+}
+@mixin tarifTemplate2HoverActiveHead {
+  .headTarif {
+    height: 110px;
+  }
+}
+@mixin upDots {
+  .upDots {
+    padding-top: 50px !important;
+    &.owl-carousel {
+      .owl-dots {
+        position: absolute !important;
+        top: 0px;
+        bottom: auto !important;
+        margin: 0px 0px 0px !important;
+      }
+    }
+  }
+}

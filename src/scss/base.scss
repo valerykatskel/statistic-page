@@ -1,0 +1,13 @@
+body {
+  font-family: $font-base;
+  margin: 0px;
+  padding: 0px;
+  color: $color-black;
+  background-color: $color-main-background;
+}
+a {
+  color: $color-link;
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,21 @@
+header {
+  padding: 15px $padding-2;
+  box-shadow: 1px 0px 3px 1px #cbcbcb;
+  background-color: $color-white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  .logo {
+    padding: 4px $padding-1 0 0;
+    margin-right: $padding-1;
+    display: inline-block;
+    border-right: 1px solid $color-border;
+  }
+  .title {
+    display: inline-block;
+    overflow: hidden;
+    font-size: $font-size-base;
+    line-height: $font-small-lh;
+    color: $color-black2;
+  }
+}

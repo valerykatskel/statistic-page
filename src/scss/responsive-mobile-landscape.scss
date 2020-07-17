@@ -1,0 +1,141 @@
+.main-content {
+  .report-header {
+    padding-bottom: $padding-2;
+    .company-logo {
+      img {
+        width: auto;
+        margin-top: $padding-2;
+        float: left;
+      }
+    }
+  }
+  .report-header {
+    border-bottom: 1px solid $color-border;
+    margin-left: -$padding-1;
+    padding-left: $padding-1;
+    margin-right: -$padding-1;
+    padding-right: $padding-1;
+    .company-logo {
+      padding-left: 0;
+      width: 50%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .b-dataset {
+    border-top: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    .row {
+      .col-12 {
+        border: none;
+      }
+    }
+    .b-stat {
+      border-bottom: 1px solid $color-border;
+      padding-top: $padding-1;
+      padding-bottom: $padding-2;
+      margin-left: -$padding-1 !important;
+      padding-left: $padding-1 !important;
+      margin-right: -$padding-1 !important;
+      padding-right: $padding-1 !important;
+    }
+    .b-chart {
+      border-bottom: 1px solid $color-border;
+      padding-top: $padding-1;
+      padding-bottom: $padding-2;
+      margin-left: -$padding-charts !important;
+      padding-left: $padding-charts !important;
+      margin-right: -$padding-charts !important;
+      padding-right: $padding-charts !important;
+    }
+    &.information-data {
+      padding-top: $padding-1;
+      &:not(.d-none) {
+        border-top: 1px solid #e6e6e6;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+      }
+      & + .sharelist {
+        margin-top: 20px;
+        padding-bottom: 10px;
+      }
+    }
+    &.chart-data {
+      & + .sharelist {
+        margin-top: 0;
+        border-top: none;
+        padding-bottom: 10px;
+      }
+    }
+    &.sharelist {
+      border-top: 1px solid $color-border;
+      padding: 20px 0 0 0;
+      margin-left: 0px;
+      margin-right: 0;
+    }
+  }
+  .report-data {
+    border-bottom: none;
+    .col-12 {
+      @include cfix;
+      border-left: none;
+      &:first-child {
+        .b-stat {
+          padding-left: $padding-1;
+        }
+      }
+      &:last-child {
+        .b-stat {
+          padding-right: $padding-1;
+        }
+      }
+    }
+    .row {
+      .col-12 {
+        &:first-child {
+          .b-stat {
+            border-right: none;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+        }
+        .b-stat {
+          .count {
+            line-height: 1;
+            margin-bottom: 0;
+            & + .stat-footer {
+              margin-top: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .chart-data {
+    padding: 0 $padding-1 * 4;
+
+    .row {
+      .col-12 {
+        &:first-child {
+          .b-chart {
+            border-right: none;
+          }
+        }
+        .b-chart {
+          margin-left: 0;
+          margin-right: 0;
+          border-left: none;
+          border-right: none;
+          .title {
+            margin-left: -$padding-2 * 2;
+          }
+        }
+      }
+    }
+  }
+}

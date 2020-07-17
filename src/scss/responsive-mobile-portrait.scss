@@ -1,0 +1,10 @@
+.main-content {
+  .chart-data {
+    padding: 0 $padding-2 * 2;
+    .b-chart {
+      .title {
+        margin-left: -$padding-1 * 2 !important;
+      }
+    }
+  }
+}
