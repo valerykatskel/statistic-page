@@ -2,11 +2,16 @@
   background: $color-white;
   border-radius: $border-radius;
   margin-top: $base-indent;
-  padding: $small-indent $base-indent $base-indent;
   box-sizing: border-box;
+  width: 100%;
+
+  .report-item-inner {
+    padding: $small-indent $base-indent $base-indent;
+  }
 
   @media (min-width: 768px) {
     width: 374px;
+
     &.item-lead {
       width: 768px;
     }
@@ -74,7 +79,9 @@
 
   &.item-lead {
     margin-top: 0;
-
+    @media (min-width: 768px) {
+      margin-left: 0;
+    }
     .report-header {
       margin-bottom: $base-indent;
       display: flex;

@@ -11,20 +11,25 @@
       .page-content
         <lead-report-item :content="leadItem" />
 
-        .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
-          <report-item-header :content="item.header"/>  
-          <list-report-item :content="item.sections"/>
-          <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/>  
+        <div v-masonry="containerId" transition-duration="0.3s" item-selector=".report-item" column-width="374" gutter="20">
+          .report-item.item-list(v-masonry-tile v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
+            .report-item-inner
+              <report-item-header :content="item.header"/>  
+              <list-report-item :content="item.sections"/>
+              <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/>  
 
-        .report-item.item-article(v-if="articleItems.length > 0" v-for="item in articleItems" :key="item.header.title")
-          <report-item-header :content="item.header"/>    
-          <article-report-item :content="item.sections"/>
-          <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
+          .report-item.item-article(v-masonry-tile v-if="articleItems.length > 0" v-for="item in articleItems" :key="item.header.title")
+            .report-item-inner
+              <report-item-header :content="item.header"/>    
+              <article-report-item :content="item.sections"/>
+              <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
-        .report-item.item-chart(v-if="chartItems.length > 0" v-for="item in chartItems" :key="item.header.title")
-          <report-item-header :content="item.header"/>  
-          <chart-report-item :content="item"/>
-          <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
+          .report-item.item-chart(v-masonry-tile v-if="chartItems.length > 0" v-for="item in chartItems" :key="item.header.title")
+            .report-item-inner
+              <report-item-header :content="item.header"/>  
+              <chart-report-item :content="item"/>
+              <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
+        </div>
 </template>
 
 <script>
