@@ -1,23 +1,2 @@
 footer {
-  background-color: $color-white;
-  margin-top: 60px;
-  padding: $padding-1 $padding-2;
-  background: $color-white;
-  font-size: $font-size-small;
-  line-height: $font-small-lh;
-  color: $color-gray-2;
-
-  .footer-text {
-    p {
-      margin-top: 0;
-      margin-bottom: 15px;
-    }
-  }
-  .footer-copyright {
-    overflow: hidden;
-    p {
-      margin-top: 5px;
-      margin-bottom: 0;
-    }
-  }
 }

@@ -1,0 +1,85 @@
+.report-item {
+  background: $color-white;
+  border-radius: $border-radius;
+  margin-top: $base-indent;
+  padding: $small-indent $base-indent $base-indent;
+
+  .report-header {
+    padding-bottom: $small-indent;
+    border-bottom: 1px solid $border-color;
+    margin-left: -$base-indent;
+    margin-right: -$base-indent;
+    padding-left: $base-indent;
+    padding-right: $base-indent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      font-size: 17px;
+      line-height: 21px;
+      font-weight: bold;
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .report-footer {
+    font-size: 13px;
+    line-height: 18px;
+    color: $meta-text-color;
+    margin-top: $small-indent;
+  }
+
+  &.item-lead {
+    margin-top: 0;
+
+    .report-header {
+      margin-bottom: $base-indent;
+      display: flex;
+      flex-direction: column-reverse;
+
+      .logo {
+        width: 120px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: $base-indent;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .title {
+        font-size: 17px;
+        line-height: 23px;
+        font-weight: bold;
+      }
+    }
+
+    .report-data {
+      .section-item {
+        font-size: 15px;
+        line-height: 21px;
+        display: flex;
+        margin-top: $base-indent / 2;
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .item-value {
+          margin-left: 5px;
+        }
+      }
+    }
+    .report-footer {
+      margin-top: $base-indent;
+    }
+  }
+}

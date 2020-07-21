@@ -1,43 +1,17 @@
-$font-base: "Arial";
-$font-size-small: 13px;
-$font-small-lh: 18px;
+$base-font-family: Arial, Helvetica, sans-serif;
 
-$font-size-base: 15px;
-$font-small-lh: 23px;
-
-$font-size-big: 21px;
-
-$padding-1: 20px;
-$padding-2: 30px;
-$padding-charts: $padding-1 * 3;
-$padding-charts-small: $padding-1 * 2;
-
-// color
+$border-radius: 5px;
 $color-white: #fff;
 
-$color-black: #000;
-$color-black2: #1d1d1d;
+$base-indent: 20px;
+$small-indent: 15px;
 
-$color_blue: #0524a5;
+$main-text-color: #1d1d1d;
+$meta-text-color: #808080;
 
-$color-gray: #e6e6e6;
-$color-gray-2: #7f7f7f;
+$border-color: #e7e7e7;
 
-$color-main-background: #f7f7f7;
-
-$color-link: $color-blue;
-$color-border: $color-gray;
-
-$max-media-sd: 1439px;
-$max-media-md: 1199px;
-$max-media-sm: 991px;
-$max-media-xs: 767px;
-$max-media-xss: 399px;
-$max-media-xxss: 319px;
-
-$min-media-sd: 1440px;
-$min-media-md: 1200px;
-$min-media-sm: 992px;
-$min-media-xs: 768px;
-$min-media-xss: 400px;
-$min-media-xxss: 320px;
+// buttons
+$button-color: #111111;
+$button-background: #d2dfff;
+$button-border-radius: 3px;

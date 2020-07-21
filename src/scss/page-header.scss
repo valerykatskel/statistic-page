@@ -1,0 +1,19 @@
+.page-header {
+  padding: $base-indent / 2 $small-indent;
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  .logo {
+    display: inline-block;
+    width: 119px;
+    height: 23px;
+    position: relative;
+
+    img {
+      vertical-align: bottom;
+    }
+  }
+}
