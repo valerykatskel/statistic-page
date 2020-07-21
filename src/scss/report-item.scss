@@ -9,16 +9,20 @@
     padding: $small-indent $base-indent $base-indent;
   }
 
-  @media (min-width: 768px) {
-    width: 374px;
+  @media (min-width: $md-width) {
+    width: 370px;
 
     &.item-lead {
-      width: 768px;
+      width: $md-width;
     }
   }
 
-  @media (min-width: 1170px) {
-    width: 1170px;
+  @media (min-width: $lg-width) {
+    width: 370px;
+    margin-top: $small-indent * 2;
+    &.item-lead {
+      width: $lg-width;
+    }
   }
 
   .report-header {
@@ -79,7 +83,7 @@
 
   &.item-lead {
     margin-top: 0;
-    @media (min-width: 768px) {
+    @media (min-width: $md-width) {
       margin-left: 0;
     }
     .report-header {

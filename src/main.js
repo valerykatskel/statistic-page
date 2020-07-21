@@ -1,8 +1,9 @@
 import Vue from "vue";
 import App from "./App.vue";
-import { VueMasonryPlugin } from "vue-masonry";
+import VueMasonry from "vue-masonry-css";
 import "@/main.scss";
-Vue.use(VueMasonryPlugin);
+
+Vue.use(VueMasonry);
 Vue.config.productionTip = false;
 
 new Vue({

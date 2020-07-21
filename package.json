@@ -28,7 +28,7 @@
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.2",
-    "vue-masonry": "^0.11.8",
+    "vue-masonry-css": "^1.0.3",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
