@@ -27,6 +27,32 @@
     }
   }
 
+  .report-data {
+    margin-top: $base-indent;
+
+    .data-section {
+      border-top: 1px solid $border-color;
+      margin-top: $base-indent;
+      padding-top: $base-indent;
+      &:first-child {
+        border: none;
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    .section-item {
+      font-size: 15px;
+      line-height: 21px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: $base-indent / 2;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
   .report-footer {
     font-size: 13px;
     line-height: 18px;
@@ -49,6 +75,7 @@
         justify-content: center;
         align-items: center;
         margin-bottom: $base-indent;
+        align-self: flex-start;
 
         img {
           width: 100%;
@@ -68,6 +95,7 @@
         line-height: 21px;
         display: flex;
         margin-top: $base-indent / 2;
+        justify-content: flex-start;
 
         &:first-child {
           margin-top: 0;

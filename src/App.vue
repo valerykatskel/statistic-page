@@ -15,7 +15,7 @@
 
         .report-item.item-list(v-if="listItems.length > 0" v-for="(item,i) in listItems" :key="i")
           <report-item-header :content="item.header"/>  
-          //- <report-item-list/>
+          <list-report-item :content="item.sections"/>
           <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/>  
 
         //-.report-item.item-article(v-if="articleItems.length > 0" v-for="(item,i) in articleItems" :key="i")
@@ -71,7 +71,7 @@ import ReportItemHeader from "./components/ReportItemHeader";
 import ReportItemFooter from "./components/ReportItemFooter";
 
 import LeadReportItem from "./components/LeadReportItem";
-import ListReport from "./components/ListReport";
+import ListReportItem from "./components/ListReportItem";
 import ArticleReport from "./components/ArticleReport";
 
 export default {
@@ -81,7 +81,7 @@ export default {
     ReportItemHeader,
     ReportItemFooter,
     LeadReportItem,
-    ListReport,
+    ListReportItem,
     ArticleReport
   },
   data() {
