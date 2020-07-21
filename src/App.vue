@@ -1,68 +1,30 @@
 <template lang="pug">
-  <div id="app">
+  #app
     <svg-sprite />
     .page-header
       .logo
         img(srcset="//img.tyt.by/i/logo-tutby.png, //img.tyt.by/i/logo-tutby@1.5x.png 1.5x, //img.tyt.by/i/logo-tutby@2x.png 2x", src="//img.tyt.by/i/logo-tutby.png")
 
     .container
-
       .page-title {{title}}
-
 
       .page-content
         <lead-report-item :content="leadItem" />
 
-        .report-item.item-list(v-if="listItems.length > 0" v-for="(item,i) in listItems" :key="i")
+        .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
           <report-item-header :content="item.header"/>  
           <list-report-item :content="item.sections"/>
           <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/>  
 
-        //-.report-item.item-article(v-if="articleItems.length > 0" v-for="(item,i) in articleItems" :key="i")
-          //- <report-item-header :content="item.header"/>  
+        .report-item.item-article(v-if="articleItems.length > 0" v-for="item in articleItems" :key="item.header.title")
+          <report-item-header :content="item.header"/>    
+          <article-report-item :content="item.sections"/>
+          <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
-        //-.report-item.item-chart(v-if="chartItems.length > 0" v-for="(item,i) in chartItems" :key="i")
-          //- <report-item-header :content="item.header"/>  
-          //- <report-item-article v-if="articleItems.length > 0" v-for="(item,i) in articleItems" :key="i" :content="item"/>
-        
- 
-
-        //- .report-item  
-        //-   header
-        //-     .title Размещение на титульной
-        //-     .header-icon
-
-        //-   .report-data
-
-        //-     .data-section
-        //-       .section-item
-        //-         .item-name Показы
-        //-         .item-value 1 200 000
-        //-       .section-item
-        //-         .item-name Уникальные показы
-        //-         .item-value 900 000 
-
-        //-     .data-section
-        //-       .section-item
-        //-         .item-name Клики
-        //-         .item-value 500
-        //-       .section-item
-        //-         .item-name Уникальные клики
-        //-         .item-value 456 
-
-        //-     .data-section
-        //-       .section-item
-        //-         .item-name CTR
-        //-         .item-value 0,5
-        //-       .section-item
-        //-         .item-name Уникальный CTR 
-        //-         .item-value 0,45
-
-        //-   footer
-        //-     p | На сайт с этой новости переходили лучше, чем с 25% предыдущих новостей на этой позиции
-
-
-  </div>
+        .report-item.item-chart(v-if="chartItems.length > 0" v-for="item in chartItems" :key="item.header.title")
+          <report-item-header :content="item.header"/>  
+          <chart-report-item :content="item"/>
+          <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 </template>
 
 <script>
@@ -72,7 +34,8 @@ import ReportItemFooter from "./components/ReportItemFooter";
 
 import LeadReportItem from "./components/LeadReportItem";
 import ListReportItem from "./components/ListReportItem";
-import ArticleReport from "./components/ArticleReport";
+import ArticleReportItem from "./components/ArticleReportItem";
+import ChartReportItem from "./components/ChartReportItem";
 
 export default {
   name: "App",
@@ -82,7 +45,8 @@ export default {
     ReportItemFooter,
     LeadReportItem,
     ListReportItem,
-    ArticleReport
+    ArticleReportItem,
+    ChartReportItem
   },
   data() {
     return {
@@ -237,18 +201,22 @@ export default {
             icon: "#file-list"
           },
           sections: [
-            {
-              title:
-                "Время купить квартиру: Рассрочка 0% до 36 месяцев в новостройках!",
-              image: "",
-              params: [{ name: "CTR", value: "0,50" }]
-            },
-            {
-              title:
-                "Оказывается, в Минске квартиру с ремонтом уже можно купить до 40 тысяч долларов. Что за жилье?",
-              image: "",
-              params: [{ name: "CTR", value: "0,45" }]
-            }
+            [
+              {
+                title:
+                  "Время купить квартиру: Рассрочка 0% до 36 месяцев в новостройках!",
+                image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                params: [{ name: "CTR", value: "0,50" }]
+              }
+            ],
+            [
+              {
+                title:
+                  "Оказывается, в Минске квартиру с ремонтом уже можно купить до 40 тысяч долларов. Что за жилье?",
+                image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                params: [{ name: "CTR", value: "0,45" }]
+              }
+            ]
           ]
         },
         {
@@ -273,7 +241,14 @@ export default {
           header: {
             title: "Возраст",
             icon: "#cake"
-          }
+          },
+          bars: [
+            { name: 1, width: 100 },
+            { name: 2, width: 89 },
+            { name: 3, width: 68 },
+            { name: 4, width: 48 },
+            { name: 5, width: 3 }
+          ]
         },
         {
           type: "chart",
@@ -281,7 +256,14 @@ export default {
           header: {
             title: "География по Беларуси",
             icon: "#map-pin"
-          }
+          },
+          bars: [
+            { name: 1, width: 100 },
+            { name: 2, width: 57 },
+            { name: 3, width: 45 },
+            { name: 4, width: 21 },
+            { name: 5, width: 3 }
+          ]
         },
         {
           type: "chart",
@@ -289,7 +271,12 @@ export default {
           header: {
             title: "География по странам",
             icon: "#earth"
-          }
+          },
+          bars: [
+            { name: 1, width: 100 },
+            { name: 2, width: 35 },
+            { name: 3, width: 3 }
+          ]
         },
         {
           type: "chart",
@@ -297,7 +284,15 @@ export default {
           header: {
             title: "Интересы",
             icon: "#star"
-          }
+          },
+          bars: [
+            { name: 1, width: 100 },
+            { name: 2, width: 87 },
+            { name: 3, width: 57 },
+            { name: 4, width: 22 },
+            { name: 5, width: 15 },
+            { name: 6, width: 3 }
+          ]
         }
       ],
       footer: {
@@ -305,14 +300,6 @@ export default {
           "В отчете мы используем данные, предоставленные yandex.metrika, onthe и нашей внутренней статистикой. «Яндекс.Метрика» — бесплатный интернет-сервис компании Яндекс, предназначенный для оценки посещаемости веб-сайтов, и анализа поведения пользователей. На данный момент Яндекс.Метрика является второй по размеру системой веб-аналитики в Европе. Onthe — редакторская система аналитики, созданная специально для цифровых медиа. Позволяет измерять качество и эффективность публикаций по разным источникам трафика, анализировать лояльность аудитории и как она взаимодействует с сайтом.",
         copyright: "© ООО «ТУТ БАЙ МЕДИА», 2000 — 2020 УНП 191104626"
       }
-
-      // reportChartData: [
-      //   {
-      //     name: "Тип устройства",
-      //     type: "doughnut",
-      //     data: [{ label: "ПК" }, { label: "Смартфоны" }, { label: "Планшеры" }]
-      //   }
-      // ],
     };
   },
   computed: {
