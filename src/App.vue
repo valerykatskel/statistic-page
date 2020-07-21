@@ -1,9 +1,8 @@
 <template lang="pug">
   #app
     <svg-sprite />
-    .page-header
-      .logo
-        img(srcset="//img.tyt.by/i/logo-tutby.png, //img.tyt.by/i/logo-tutby@1.5x.png 1.5x, //img.tyt.by/i/logo-tutby@2x.png 2x", src="//img.tyt.by/i/logo-tutby.png")
+    
+    <page-header />
 
     .container
       .page-title {{title}}
@@ -36,9 +35,9 @@
 
 <script>
 import SvgSprite from "./components/SvgSprite";
+import PageHeader from "./components/PageHeader";
 import ReportItemHeader from "./components/ReportItemHeader";
 import ReportItemFooter from "./components/ReportItemFooter";
-
 import LeadReportItem from "./components/LeadReportItem";
 import ListReportItem from "./components/ListReportItem";
 import ArticleReportItem from "./components/ArticleReportItem";
@@ -48,6 +47,7 @@ export default {
   name: "App",
   components: {
     SvgSprite,
+    PageHeader,
     ReportItemHeader,
     ReportItemFooter,
     LeadReportItem,
