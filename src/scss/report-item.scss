@@ -83,13 +83,17 @@
 
   &.item-lead {
     margin-top: 0;
+
     @media (min-width: $md-width) {
       margin-left: 0;
     }
+
     .report-header {
       margin-bottom: $base-indent;
       display: flex;
       flex-direction: column-reverse;
+      border-bottom: 0;
+      padding-bottom: 0;
 
       .logo {
         width: 120px;
@@ -110,6 +114,22 @@
         line-height: 23px;
         font-weight: bold;
         align-self: flex-start;
+      }
+
+      @media (min-width: $lg-width) {
+        flex-direction: inherit;
+        position: relative;
+
+        .title {
+          font-size: 21px;
+          line-height: 27px;
+          margin-right: 230px;
+        }
+        .logo {
+          margin-bottom: 0;
+          width: 200px;
+          height: 100px;
+        }
       }
     }
 

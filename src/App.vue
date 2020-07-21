@@ -10,8 +10,6 @@
       .page-content
         <lead-report-item :content="leadItem" />
 
-      
-
         masonry(:cols="{default: 3, 1170:2, 760: 1}", :gutter="{default: '30px', 760: '20px'}")
           .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
             .report-item-inner
@@ -30,7 +28,11 @@
               <report-item-header :content="item.header"/>  
               <chart-report-item :content="item"/>
               <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
-        </div>
+
+    .page-footer
+      .container  
+        .footer-text {{footer.text}}
+        .footer-copyright {{footer.copyright}}  
 </template>
 
 <script>
@@ -305,7 +307,7 @@ export default {
       footer: {
         text:
           "В отчете мы используем данные, предоставленные yandex.metrika, onthe и нашей внутренней статистикой. «Яндекс.Метрика» — бесплатный интернет-сервис компании Яндекс, предназначенный для оценки посещаемости веб-сайтов, и анализа поведения пользователей. На данный момент Яндекс.Метрика является второй по размеру системой веб-аналитики в Европе. Onthe — редакторская система аналитики, созданная специально для цифровых медиа. Позволяет измерять качество и эффективность публикаций по разным источникам трафика, анализировать лояльность аудитории и как она взаимодействует с сайтом.",
-        copyright: "© ООО «ТУТ БАЙ МЕДИА», 2000 — 2020 УНП 191104626"
+        copyright: "© ООО «ТУТ БАЙ МЕДИА», 2000 — 2020УНП 191104626"
       }
     };
   },

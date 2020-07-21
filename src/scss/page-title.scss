@@ -4,4 +4,9 @@
   font-weight: bold;
   color: $main-text-color;
   margin: $small-indent * 2 $base-indent;
+
+  @media (min-width: $lg-width) {
+    font-size: 27px;
+    line-height: 35px;
+  }
 }

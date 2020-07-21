@@ -1,0 +1,38 @@
+.page-footer {
+  background-color: $color-white;
+  margin-top: $base-indent * 2;
+  color: $meta-text-color;
+  font-size: 13px;
+  line-height: 18px;
+
+  .container {
+    padding-bottom: $small-indent * 2;
+  }
+
+  .footer-text {
+    margin-left: $base-indent;
+    margin-right: $base-indent;
+    margin-top: $small-indent * 2;
+  }
+
+  .footer-copyright {
+    margin-left: $base-indent;
+    margin-right: $base-indent;
+    margin-top: $base-indent;
+  }
+
+  @media (min-width: $md-width) {
+    .footer-text,
+    .footer-copyright {
+      margin-left: $base-indent / 2;
+      margin-right: $base-indent / 2;
+    }
+  }
+
+  @media (min-width: $lg-width) {
+    .footer-text,
+    .footer-copyright {
+      max-width: $md-width;
+    }
+  }
+}
