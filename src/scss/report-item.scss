@@ -3,6 +3,18 @@
   border-radius: $border-radius;
   margin-top: $base-indent;
   padding: $small-indent $base-indent $base-indent;
+  box-sizing: border-box;
+
+  @media (min-width: 768px) {
+    width: 374px;
+    &.item-lead {
+      width: 768px;
+    }
+  }
+
+  @media (min-width: 1170px) {
+    width: 1170px;
+  }
 
   .report-header {
     padding-bottom: $small-indent;
@@ -86,6 +98,7 @@
         font-size: 17px;
         line-height: 23px;
         font-weight: bold;
+        align-self: flex-start;
       }
     }
 
