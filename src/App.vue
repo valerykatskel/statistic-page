@@ -10,7 +10,7 @@
       .page-content
         <lead-report-item :content="leadItem" />
 
-        masonry(:cols="{default: 3, 1170:2, 760: 1}", :gutter="{default: '30px', 760: '20px'}")
+        masonry(:cols="{default: 3, 1170:2, 760: 1}", :gutter="{default: '30px', 1170: '20px'}")
           .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
             .report-item-inner
               <report-item-header :content="item.header"/>  
