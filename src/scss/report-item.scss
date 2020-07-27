@@ -37,7 +37,6 @@
     padding-left: $base-indent;
     padding-right: $base-indent;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 
     .title {
@@ -46,9 +45,14 @@
       font-weight: bold;
     }
 
-    .icon {
-      width: 24px;
-      height: 24px;
+    .icon-holder {
+      padding-left: $base-indent;
+
+      .icon {
+        vertical-align: bottom;
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 
