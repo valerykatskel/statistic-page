@@ -10,18 +10,19 @@
   }
 
   @media (min-width: $md-width) {
-    width: 370px;
-
     &.item-lead {
-      width: $md-width;
+      min-width: $md-width - $base-indent * 2;
+      width: 100%;
     }
   }
 
   @media (min-width: $lg-width) {
     width: 370px;
     margin-top: $small-indent * 2;
+
     &.item-lead {
-      width: $lg-width;
+      min-width: $lg-width - 2 * $lg-indent;
+      width: 100%;
     }
   }
 

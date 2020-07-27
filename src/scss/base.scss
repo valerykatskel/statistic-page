@@ -10,6 +10,7 @@ body {
   margin: 0px;
   padding: 0px;
   color: #1d1d1d;
+  -webkit-font-smoothing: antialiased;
   background-color: #f2f2f2;
   min-width: 320px;
 }
@@ -32,10 +33,26 @@ body {
   }
 
   @media (min-width: $md-width) {
-    width: $md-width;
+    width: 100%;
+    padding-left: $base-indent;
+    padding-right: $base-indent;
+    box-sizing: border-box;
+
+    .container-i {
+      max-width: $md-width;
+      margin: 0 auto;
+    }
   }
 
   @media (min-width: $lg-width) {
-    width: $lg-width;
+    width: 100%;
+    padding-left: $lg-indent;
+    padding-right: $lg-indent;
+    box-sizing: border-box;
+
+    .container-i {
+      max-width: $lg-width - 2 * $lg-indent;
+      margin: 0 auto;
+    }
   }
 }
