@@ -39,7 +39,7 @@ body {
     box-sizing: border-box;
 
     .container-i {
-      max-width: $md-width;
+      max-width: 760px;
       margin: 0 auto;
     }
   }
@@ -51,7 +51,7 @@ body {
     box-sizing: border-box;
 
     .container-i {
-      max-width: $lg-width - 2 * $lg-indent;
+      max-width: $hd-width - 2 * $lg-indent;
       margin: 0 auto;
     }
   }

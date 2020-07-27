@@ -17,11 +17,14 @@
   }
 
   @media (min-width: $lg-width) {
-    width: 370px;
     margin-top: $small-indent * 2;
+  }
+
+  @media (min-width: $hd-width) {
+    width: 370px;
 
     &.item-lead {
-      min-width: $lg-width - 2 * $lg-indent;
+      min-width: $hd-width - 2 * $lg-indent;
       width: 100%;
     }
   }
@@ -130,6 +133,8 @@
           margin-bottom: 0;
           width: 200px;
           height: 100px;
+          right: 20px;
+          position: absolute;
         }
       }
     }
