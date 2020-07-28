@@ -229,6 +229,22 @@ export default {
                 image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
                 params: [{ name: "CTR", value: "0,45" }]
               }
+            ],
+            [
+              {
+                title:
+                  "Время купить квартиру: Рассрочка 0% до 36 месяцев в новостройках!",
+                image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                params: [{ name: "CTR", value: "0,50" }]
+              }
+            ],
+            [
+              {
+                title:
+                  "Оказывается, в Минске квартиру с ремонтом уже можно купить до 40 тысяч долларов. Что за жилье?",
+                image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                params: [{ name: "CTR", value: "0,45" }]
+              }
             ]
           ]
         },

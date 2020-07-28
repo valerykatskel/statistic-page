@@ -167,6 +167,15 @@
 
   &.item-article {
     .report-data {
+      @media (min-width: $md-width) {
+        max-height: 320px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 0px;
+          background: transparent; /* Chrome/Safari/Webkit */
+        }
+      }
+
       .data-section {
         .section-item {
           flex-direction: column;
