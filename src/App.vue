@@ -11,24 +11,27 @@
         .page-content
           <lead-report-item :content="leadItem" />
 
-          masonry(:cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
-            .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
-              .report-item-inner
-                <report-item-header :content="item.header"/>  
-                <list-report-item :content="item.sections"/>
-                <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/>  
+          section.masonry-data
+            masonry(:cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
+              .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
+                .report-item-inner
+                  <report-item-header :content="item.header"/>  
+                  <list-report-item :content="item.sections"/>
+                  <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/>  
 
-            .report-item.item-article(v-if="articleItems.length > 0" v-for="item in articleItems" :key="item.header.title")
-              .report-item-inner
-                <report-item-header :content="item.header"/>    
-                <article-report-item :content="item.sections"/>
-                <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
+              .report-item.item-article(v-if="articleItems.length > 0" v-for="item in articleItems" :key="item.header.title")
+                .report-item-inner
+                  <report-item-header :content="item.header"/>    
+                  <article-report-item :content="item.sections"/>
+                  <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
-            .report-item.item-chart(v-if="chartItems.length > 0" v-for="item in chartItems" :key="item.header.title")
-              .report-item-inner
-                <report-item-header :content="item.header"/>  
-                <chart-report-item :content="item"/>
-                <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
+          section.masonry-data
+            masonry(:cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
+              .report-item.item-chart(v-if="chartItems.length > 0" v-for="item in chartItems" :key="item.header.title")
+                .report-item-inner
+                  <report-item-header :content="item.header"/>  
+                  <chart-report-item :content="item"/>
+                  <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
     .page-footer
       .container  

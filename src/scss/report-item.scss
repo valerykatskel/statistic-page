@@ -209,8 +209,8 @@
 
   &.item-chart {
     .report-data {
+      margin: $small-indent * 2 $base-indent / 2 $base-indent / 2;
       .chart-holder {
-        padding: $small-indent * 2 0;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -230,6 +230,9 @@
             height: 30px;
             margin-top: 2px;
             background-color: #f2f2f2;
+            &:first-child {
+              margin-top: 0;
+            }
           }
         }
       }

@@ -56,3 +56,12 @@ body {
     }
   }
 }
+
+.masonry-data {
+  border-top: 1px solid $border-color;
+  margin-top: $base-indent;
+
+  @media (min-width: $lg-width) {
+    margin-top: $small-indent * 2;
+  }
+}
