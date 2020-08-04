@@ -92,6 +92,11 @@
   &.item-lead {
     margin-top: 0;
 
+    + .masonry-data {
+      margin-top: 0;
+      border-top: none;
+    }
+
     @media (min-width: $md-width) {
       margin-left: 0;
     }
