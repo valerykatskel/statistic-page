@@ -225,9 +225,7 @@
     .report-data {
       margin: $small-indent * 2 $base-indent / 2 $base-indent / 2;
       .chart-holder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        position: relative;
 
         .chart-circle {
           width: 220px;
