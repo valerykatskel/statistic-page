@@ -12,7 +12,7 @@
           <lead-report-item :content="leadItem" />
 
           section.masonry-data
-            masonry(:cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
+            masonry(class="mansory-wrapper" :cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
               .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
                 .report-item-inner
                   <report-item-header :content="item.header"/>  
@@ -26,7 +26,7 @@
                   <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
           section.masonry-data
-            masonry(:cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
+            masonry(class="mansory-wrapper" :cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
               .report-item.item-chart(v-if="chartItems.length > 0" v-for="item in chartItems" :key="item.header.title")
                 .report-item-inner
                   <report-item-header :content="item.header"/>  
