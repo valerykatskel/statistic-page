@@ -4,7 +4,7 @@
     
     <page-header />
 
-    .container
+    .container(v-if="loaded")
       .container-i
         .page-title {{title}}
 
@@ -33,6 +33,10 @@
                   <chart-report-item :content="item"/>
                   <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
+    .loader(v-else)
+      p Отчет загружается...
+
+
     .page-footer
       .container  
         .footer-text {{footer.text}}
@@ -40,6 +44,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import SvgSprite from "./components/SvgSprite";
 import PageHeader from "./components/PageHeader";
 import ReportItemHeader from "./components/ReportItemHeader";
@@ -48,7 +53,6 @@ import LeadReportItem from "./components/LeadReportItem";
 import ListReportItem from "./components/ListReportItem";
 import ArticleReportItem from "./components/ArticleReportItem";
 import ChartReportItem from "./components/ChartReportItem";
-import ReportItems from "./assets/reportItems.json";
 
 export default {
   name: "App",
@@ -64,6 +68,7 @@ export default {
   },
   data() {
     return {
+      loaded: false,
       title: "Отчёт по размещению рекламного материала",
       items: [],
       footer: {
@@ -73,8 +78,17 @@ export default {
       }
     };
   },
-  created() {
-    this.items = ReportItems;
+
+  async mounted() {
+    axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
+    await axios
+      .get("//localhost:8080/reportItems.json")
+      .then(response => {
+        console.log("OK");
+        this.items = response.data;
+        this.loaded = true;
+      })
+      .catch(error => console.log(`Хьюстон, у нас проблемы:\n ${error}`));
   },
   computed: {
     leadItem() {
