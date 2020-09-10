@@ -34,7 +34,7 @@
                   <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
 
     .loader(v-else)
-      p Отчет загружается...
+      p {{loadingStatus}}
 
 
     .page-footer
@@ -69,6 +69,7 @@ export default {
   data() {
     return {
       loaded: false,
+      loadingStatus: "Отчет загружается...",
       title: "Отчёт по размещению рекламного материала",
       items: [],
       footer: {
@@ -82,13 +83,14 @@ export default {
   async mounted() {
     axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
     await axios
-      .get("//localhost:8080/reportItems.json")
+      .get("./data.json")
       .then(response => {
-        console.log("OK");
         this.items = response.data;
         this.loaded = true;
       })
-      .catch(error => console.log(`Хьюстон, у нас проблемы:\n ${error}`));
+      .catch(error => {
+        this.loadingStatus = error;
+      });
   },
   computed: {
     leadItem() {
