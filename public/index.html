@@ -1,15 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <script>
+      var initialData = {
+        title: "Отчёт по размещению рекламного материала",
+        footer: {
+          text:
+            "В отчете мы используем данные, предоставленные yandex.metrika, onthe и нашей внутренней статистикой. «Яндекс.Метрика» — бесплатный интернет-сервис компании Яндекс, предназначенный для оценки посещаемости веб-сайтов, и анализа поведения пользователей. На данный момент Яндекс.Метрика является второй по размеру системой веб-аналитики в Европе. Onthe — редакторская система аналитики, созданная специально для цифровых медиа. Позволяет измерять качество и эффективность публикаций по разным источникам трафика, анализировать лояльность аудитории и как она взаимодействует с сайтом.",
+          copyright: "© ООО «ТУТ БАЙ МЕДИА», 2000 — 2020 УНП 191104626",
+        },
+        items: [
+          {
+            type: "lead",
+            title:
+              "Время купить квартиру: Рассрочка 0% до 36 месяцев в новостройках!",
+            logo:
+              "https://s-kupe.by/templates/kupe/images/svg/logo-R_black.svg",
+            description: [
+              {
+                name: "Рубрика",
+                value: "Новости компаний",
+              },
+              {
+                name: "Дата",
+                value: "19 мая 2020 в 09:00",
+              },
+              {
+                name: "ID публикации",
+                value: "684945",
+              },
+            ],
+            button: {
+              link: "https://tut.by/",
+              title: "Смотреть материал",
+            },
+          },
+          {
+            type: "list",
+            header: {
+              title: "Просмотры",
+              icon: "#eye",
+            },
+            sections: [
+              [
+                {
+                  name: "Просмотры материала",
+                  value: "7 763",
+                },
+                {
+                  name: "Просмотры видео",
+                  value: "1",
+                },
+                {
+                  name: "AMP-просмотры",
+                  value: "47",
+                },
+              ],
+            ],
+            footer: {
+              text:
+                "Новость прочитали лучше, чем 75% предыдущих размещений на данной позиции",
+            },
+          },
+          {
+            type: "list",
+            header: {
+              title: "Время",
+              icon: "#time",
+            },
+            sections: [
+              [
+                {
+                  name: "Среднее время прочтения",
+                  value: "02:05",
+                },
+                {
+                  name: "Дочтения до середины",
+                  value: "80%",
+                },
+                {
+                  name: "Дочтения до конца",
+                  value: "63%",
+                },
+              ],
+            ],
+            footer: {
+              text:
+                "На новости провели больше времени, чем на 50% предыдущих новостей на этой позиции",
+            },
+          },
+          {
+            type: "list",
+            header: {
+              title: "Переходы",
+              icon: "#external-link",
+            },
+            sections: [
+              [
+                {
+                  name: "Переходы на сайт клиента",
+                  value: "1 356",
+                },
+              ],
+            ],
+            footer: {
+              text:
+                "На сайт с этой новости переходили лучше, чем с 25% предыдущих новостей на этой позиции",
+            },
+          },
+          {
+            type: "list",
+            header: {
+              title: "Действия",
+              icon: "#send-plane",
+            },
+            sections: [
+              [
+                {
+                  name: "Клики на кнопку «Позвонить»",
+                  value: "25",
+                },
+                {
+                  name: "Отправленные заявки",
+                  value: "1",
+                },
+              ],
+            ],
+          },
+          {
+            type: "list",
+            header: {
+              title: "Видео",
+              icon: "#video",
+            },
+            sections: [
+              [
+                {
+                  name: "Количество запусков",
+                  value: "300",
+                },
+                {
+                  name: "Среднее время",
+                  value: "1",
+                },
+                {
+                  name: "Просмотр до середины",
+                  value: "80%",
+                },
+                {
+                  name: "Просмотр до конца",
+                  value: "63%",
+                },
+              ],
+            ],
+          },
+          {
+            type: "list",
+            header: {
+              title: "Взаимодействия с тестом",
+              icon: "#questionnaire",
+            },
+            sections: [
+              [
+                {
+                  name: "Ответов на первый вопрос",
+                  value: "10 000",
+                },
+                {
+                  name: "Прошли до конца",
+                  value: "9 345",
+                },
+              ],
+            ],
+          },
+          {
+            type: "list",
+            header: {
+              title: "Размещение на титульной",
+              icon: "#terminal",
+            },
+            sections: [
+              [
+                {
+                  name: "Показы",
+                  value: "1 200 000",
+                },
+                {
+                  name: "Уникальные показы",
+                  value: "900 000",
+                },
+              ],
+              [
+                {
+                  name: "Клики",
+                  value: "500",
+                },
+                {
+                  name: "Уникальные клики",
+                  value: "456",
+                },
+              ],
+              [
+                {
+                  name: "CTR",
+                  value: "0,5",
+                },
+                {
+                  name: "Уникальный CTR ",
+                  value: "0,45",
+                },
+              ],
+            ],
+          },
+          {
+            type: "list",
+            header: {
+              title: "Шаринг",
+              icon: "#share-forward",
+            },
+            sections: [
+              [
+                {
+                  name: "Вконтакте",
+                  value: "300",
+                },
+                {
+                  name: "Facebook",
+                  value: "200",
+                },
+                {
+                  name: "Twitter",
+                  value: "100",
+                },
+                {
+                  name: "Однокласники",
+                  value: "90",
+                },
+                {
+                  name: "Viber",
+                  value: "80",
+                },
+                {
+                  name: "Telegram",
+                  value: "40",
+                },
+              ],
+            ],
+          },
+          {
+            type: "article",
+            header: {
+              title: "Ротация заголовков",
+              icon: "#file-list",
+            },
+            sections: [
+              [
+                {
+                  title:
+                    "Время купить квартиру: Рассрочка 0% до 36 месяцев в новостройках!",
+                  image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                  params: [
+                    {
+                      name: "CTR",
+                      value: "0,50",
+                    },
+                  ],
+                },
+              ],
+              [
+                {
+                  title:
+                    "Оказывается, в Минске квартиру с ремонтом уже можно купить до 40 тысяч долларов. Что за жилье?",
+                  image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                  params: [
+                    {
+                      name: "CTR",
+                      value: "0,45",
+                    },
+                  ],
+                },
+              ],
+              [
+                {
+                  title:
+                    "Время купить квартиру: Рассрочка 0% до 36 месяцев в новостройках!",
+                  image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                  params: [
+                    {
+                      name: "CTR",
+                      value: "0,50",
+                    },
+                  ],
+                },
+              ],
+              [
+                {
+                  title:
+                    "Оказывается, в Минске квартиру с ремонтом уже можно купить до 40 тысяч долларов. Что за жилье?",
+                  image: "https://dh.img.tyt.by/p/03/4/tapas_04072019_1_.jpg",
+                  params: [
+                    {
+                      name: "CTR",
+                      value: "0,45",
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+          {
+            type: "chart-doughnut",
+            header: {
+              title: "Тип устройства",
+              icon: "#devices",
+            },
+            data: [
+              {
+                label: "ПК",
+                value: "52.8%",
+                color: "#c2cfff",
+              },
+              {
+                label: "Смартфоны",
+                value: "44.73%",
+                color: "#fa5e63",
+              },
+              {
+                label: "Планшеты",
+                value: "2.46%",
+                color: "#fcbd4d",
+              },
+            ],
+          },
+          {
+            type: "chart-doughnut",
+            header: {
+              title: "Пол",
+              icon: "#group",
+            },
+            data: [
+              {
+                label: "Мужской",
+                value: "77.91%",
+                color: "#c2cfff",
+              },
+              {
+                label: "Женский",
+                value: "22.09%",
+                color: "#fa5e63",
+              },
+            ],
+          },
+          {
+            type: "chart-bars",
+            header: {
+              title: "Возраст",
+              icon: "#cake",
+            },
+            data: [
+              {
+                label: "25-34",
+                value: "38.3%",
+                color: "#c2cfff",
+              },
+              {
+                label: "35-44",
+                value: "30.84%",
+                color: "#fa5e63",
+              },
+              {
+                label: "45-54",
+                value: "17.96%",
+                color: "#fcbd4d",
+              },
+              {
+                label: "55 лет и старше",
+                value: "10.32%",
+                color: "#d37cd0",
+              },
+              {
+                label: "18-24",
+                value: "1.84%",
+                color: "#adcd6d",
+              },
+              {
+                label: "младше 18 лет",
+                value: "0.73%",
+                color: "#dcdcdc",
+              },
+            ],
+          },
+          {
+            type: "chart-bars",
+            header: {
+              title: "География по Беларуси",
+              icon: "#map-pin",
+            },
+            data: [
+              {
+                label: "Минская область",
+                value: "89.67%",
+                color: "#c2cfff",
+              },
+              {
+                label: "Брестская область",
+                value: "2.81%",
+                color: "#fa5e63",
+              },
+              {
+                label: "Гомельская область",
+                value: "2.38%",
+                color: "#fcbd4d",
+              },
+              {
+                label: "Гродненская область",
+                value: "1.76%",
+                color: "#d37cd0",
+              },
+              {
+                label: "Могилёвская область",
+                value: "1.74%",
+                color: "#adcd6d",
+              },
+              {
+                label: "Витебская область",
+                value: "1.64%",
+                color: "#dcdcdc",
+              },
+            ],
+          },
+          {
+            type: "chart-bars",
+            header: {
+              title: "География по странам",
+              icon: "#earth",
+            },
+            data: [
+              {
+                label: "Беларусь",
+                value: "96.01%",
+                color: "#c2cfff",
+              },
+              {
+                label: "Россия",
+                value: "2.09%",
+                color: "#fa5e63",
+              },
+              {
+                label: "Остальные страны",
+                value: "1.52%",
+                color: "#fcbd4d",
+              },
+              {
+                label: "Польша",
+                value: "0.38%",
+                color: "#d37cd0",
+              },
+            ],
+          },
+          {
+            type: "chart-bars",
+            header: {
+              title: "Интересы",
+              icon: "#star",
+            },
+            data: [
+              {
+                label: "Развлечения и досуг",
+                value: "93.01%",
+                color: "#c2cfff",
+              },
+              {
+                label: "Транспорт",
+                value: "87.87%",
+                color: "#fa5e63",
+              },
+              {
+                label: "Строительство и ремонт",
+                value: "85.24%",
+                color: "#fcbd4d",
+              },
+              {
+                label: "Бизнес",
+                value: "73.71%",
+                color: "#d37cd0",
+              },
+              {
+                label: "Финансы",
+                value: "72.3%",
+                color: "#adcd6d",
+              },
+              {
+                label: "Образование",
+                value: "69.65%",
+              },
+              {
+                label: "Одежда, обувь и аксессуары",
+                value: "69.59%",
+              },
+              {
+                label: "Отдых и путешествия",
+                value: "69.59%",
+              },
+              {
+                label: "Недвижимость",
+                value: "69.49%",
+              },
+              {
+                label: "Спорт",
+                value: "66.96%",
+              },
+              {
+                label: "Электроника",
+                value: "66.6%",
+              },
+              {
+                label: "Работа",
+                value: "64.84%",
+              },
+              {
+                label: "Еда и напитки",
+                value: "51.09%",
+              },
+              {
+                label: "Семья и дети",
+                value: "49.71%",
+              },
+              {
+                label: "Телеком",
+                value: "47.6%",
+              },
+              {
+                label: "Бытовая техника",
+                value: "39.6%",
+              },
+              {
+                label: "Животные",
+                value: "32.4%",
+              },
+              {
+                label: "Красота и здоровье",
+                value: "27.82%",
+              },
+              {
+                label: "Подарки и цветы",
+                value: "16.06%",
+              },
+            ],
+          },
+        ],
+      };
+    </script>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong
+        >We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work
+        properly without JavaScript enabled. Please enable it to
+        continue.</strong
+      >
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->

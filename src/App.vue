@@ -4,16 +4,16 @@
     
     <page-header />
 
-    .container(v-if="loaded")
+    .container
       .container-i
         .page-title {{title}}
 
         .page-content
-          <lead-report-item :content="leadItem" />
-
+          lead-report-item(v-if="leadItems.length > 0" v-for="(item,index) in leadItems" :content="item" :key="item.title")
+ 
           section.masonry-data
             masonry(class="mansory-wrapper" :cols="{default: 3, 999:2, 767: 1}", :gutter="{default: '30px', 999: '20px'}")
-              .report-item.item-list(v-if="listItems.length > 0" v-for="item in listItems" :key="item.header.title")
+              .report-item.item-list(v-if="listItems.length > 0" v-for="(item,index) in listItems" :key=`item.header.title`)
                 .report-item-inner
                   <report-item-header :content="item.header"/>  
                   <list-report-item :content="item.sections"/>
@@ -32,11 +32,6 @@
                   <report-item-header :content="item.header"/>  
                   <chart-report-item :content="item"/>
                   <report-item-footer v-if="item.footer !== undefined" :content="item.footer"/> 
-
-    .loader(v-else)
-      p {{loadingStatus}}
-
-
     .page-footer
       .container  
         .footer-text {{footer.text}}
@@ -44,7 +39,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import SvgSprite from "./components/SvgSprite";
 import PageHeader from "./components/PageHeader";
 import ReportItemHeader from "./components/ReportItemHeader";
@@ -68,34 +62,29 @@ export default {
   },
   data() {
     return {
-      loaded: false,
-      loadingStatus: "Отчет загружается...",
-      title: "Отчёт по размещению рекламного материала",
+      title: "",
       items: [],
-      footer: {
-        text:
-          "В отчете мы используем данные, предоставленные yandex.metrika, onthe и нашей внутренней статистикой. «Яндекс.Метрика» — бесплатный интернет-сервис компании Яндекс, предназначенный для оценки посещаемости веб-сайтов, и анализа поведения пользователей. На данный момент Яндекс.Метрика является второй по размеру системой веб-аналитики в Европе. Onthe — редакторская система аналитики, созданная специально для цифровых медиа. Позволяет измерять качество и эффективность публикаций по разным источникам трафика, анализировать лояльность аудитории и как она взаимодействует с сайтом.",
-        copyright: "© ООО «ТУТ БАЙ МЕДИА», 2000 — 2020 УНП 191104626"
-      }
+      footer: {}
     };
   },
 
-  async mounted() {
-    axios.defaults.headers.common["Access-Control-Allow-Origin"] = "*";
-    await axios
-      .get("./data.json")
-      .then(response => {
-        this.items = response.data;
-        this.loaded = true;
-      })
-      .catch(error => {
-        this.loadingStatus = error;
-      });
+  mounted() {
+    this.applyUserOptions();
+  },
+  methods: {
+    applyUserOptions() {
+      // Метод копирует значения, которые переданы прямо в html при рендеринге, если такие есть.
+      if (Object.keys(window.initialData).length > 0) {
+        Object.keys(window.initialData).map(el => {
+          this[el] = window.initialData[el];
+        });
+      }
+    }
   },
   computed: {
-    leadItem() {
-      const [result] = this.items.filter(e => e.type == "lead");
-      return result;
+    leadItems() {
+      //const [result] = ;
+      return this.items.filter(e => e.type == "lead");
     },
     listItems() {
       return this.items.filter(e => e.type == "list");
