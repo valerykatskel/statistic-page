@@ -5,7 +5,8 @@
         .section-item-holder
           .item-title(v-html="sc.title")
           .item-media 
-            video(v-if="sc.is_video" :src="sc.media")
+            video(v-if="sc.media.is_video" :width="sc.media.width" :height="sc.media.height" :controls="sc.media.controls" :autoplay="sc.media.autoplay" :loop="sc.media.loop" :muted="sc.media.muted" :playsinline="sc.media.playsinline")
+              source(:src="sc.media.src" :type="sc.media.type")
             img(v-else :src="sc.media")
           
         .section-footer 
