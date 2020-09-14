@@ -194,12 +194,13 @@
               line-height: 18px;
             }
 
-            .item-image {
+            .item-media {
               width: 120px;
               height: 80px;
               margin-left: $small-indent;
 
-              img {
+              img,
+              video {
                 width: 100%;
               }
             }
