@@ -12,11 +12,26 @@ export default {
     options: {
       legend: {
         display: false
+      },
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              // truncate
+              callback: value => {
+                const truncateLimit = 14;
+                return value.length > truncateLimit
+                  ? `${value.substr(0, truncateLimit)}...`
+                  : value;
+              }
+            }
+          }
+        ],
+        xAxes: [{}]
       }
     }
   })
 };
 </script>
 
-<style>
-</style>
+<style></style>
