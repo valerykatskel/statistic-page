@@ -1,14 +1,9 @@
 <template lang="pug">
   .report-data
     .chart-holder
-      //- here will be placed hear chart
-      //-.chart-circle
       pie-chart(v-if="content.type == 'chart-pie'" :chart="content.data")
       doughnut-chart(v-if="content.type == 'chart-doughnut'" :chart="content.data")
       bar-horizontal-chart(v-if="content.type == 'chart-bars'" :chart="content.data")
-
-      //- .chart-bars(v-if="content.type == 'chart-bars'")
-      //-   .chart-bar(v-for="bar in content.data", :style="{'background-color': `${bar.color}`,'width': `${parseFloat(bar.width)}%`}")
 </template>
 
 <script>
