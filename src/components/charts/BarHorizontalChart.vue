@@ -37,7 +37,8 @@ export default {
       const barsCount = this.chartdata.labels.length;
 
       this.$refs.canvas.style.cssText = `display: block; height: ${barsCount *
-        30}px;`;
+        30 +
+        36}px;`;
     });
   }
 };
