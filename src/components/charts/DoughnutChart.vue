@@ -7,9 +7,24 @@ export default {
   props: {
     chart: Array
   },
-  mixins: [prepareChartMixin]
+  mixins: [prepareChartMixin],
+  data: () => ({
+    options: {
+      tooltips: {
+        // Disable the on-canvas tooltip
+        enabled: true,
+
+        callbacks: {
+          label: function(tooltipItems, data) {
+            return `${data.labels[tooltipItems.index]}: ${
+              data.datasets[0].data[tooltipItems.index]
+            } %`;
+          }
+        }
+      }
+    }
+  })
 };
 </script>
 
-<style>
-</style>
+<style></style>

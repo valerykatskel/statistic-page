@@ -29,6 +29,16 @@ export default {
           }
         ],
         xAxes: [{}]
+      },
+      tooltips: {
+        // Disable the on-canvas tooltip
+        enabled: true,
+
+        callbacks: {
+          label: function(tooltipItems) {
+            return `${tooltipItems.xLabel} %`;
+          }
+        }
       }
     }
   }),
