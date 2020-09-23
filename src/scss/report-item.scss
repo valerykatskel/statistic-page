@@ -227,27 +227,6 @@
       margin: $small-indent * 2 $base-indent / 2 $base-indent / 2;
       .chart-holder {
         position: relative;
-
-        .chart-circle {
-          width: 220px;
-          height: 220px;
-          background-color: #f2f2f2;
-          border-radius: 110px;
-        }
-
-        .chart-bars {
-          width: 100%;
-
-          .chart-bar {
-            width: 100%;
-            height: 30px;
-            margin-top: 2px;
-            background-color: #f2f2f2;
-            &:first-child {
-              margin-top: 0;
-            }
-          }
-        }
       }
     }
   }

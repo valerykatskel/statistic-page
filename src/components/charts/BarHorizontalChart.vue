@@ -10,6 +10,7 @@ export default {
   mixins: [prepareChartMixin],
   data: () => ({
     options: {
+      maintainAspectRatio: false,
       legend: {
         display: false
       },
@@ -30,7 +31,15 @@ export default {
         xAxes: [{}]
       }
     }
-  })
+  }),
+  mounted() {
+    this.$nextTick(() => {
+      const barsCount = this.chartdata.labels.length;
+
+      this.$refs.canvas.style.cssText = `display: block; height: ${barsCount *
+        30}px;`;
+    });
+  }
 };
 </script>
 
