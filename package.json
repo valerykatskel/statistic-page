@@ -11,16 +11,16 @@
   "dependencies": {
     "@vue/server-test-utils": "^1.1.0",
     "axios": "^0.20.0",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "chart.js": "^2.9.3",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11",
+    "vue": "^2.6.12",
     "vue-chartjs": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.4.0",
     "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "^4.5.6",
     "@vue/cli-service": "~4.4.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/test-utils": "^1.0.3",
@@ -35,7 +35,7 @@
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^8.0.2",
     "vue-masonry-css": "^1.0.3",
-    "vue-template-compiler": "^2.6.11"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
